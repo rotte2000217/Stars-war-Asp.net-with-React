@@ -17,7 +17,7 @@ render() {
             {listItems}
             </div>)
         }
-    componentWillMount() {
+    componentDidMount() {
      document.title = 'Dashboard';
      fetch("/api/GetSpeciesAppeared", {
       method: 'GET'
