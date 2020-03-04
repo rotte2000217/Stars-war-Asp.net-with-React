@@ -48,11 +48,19 @@ namespace StarWarAPI.Controllers
         [Route("api/GetSpeciesAppeared")]
         public async Task<IHttpActionResult> GetSpeciesAppeared()
         {
-            string query = "select top 5 s.name,count(*) AS [count] from people p inner join films_characters f on p.id=f.people_id " +
+            string query = "select s.name,count(*) AS [count] from people p inner join films_characters f on p.id=f.people_id " +
                            "inner join films f1 on f1.id=f.film_id inner join films_species f2 on f1.id=f2.film_id " +
-                           "inner join species s on s.id=f2.species_id group by s.name order by count(*) desc ";
+                           "inner join species s on s.id=f2.species_id group by s.name order by [count] desc ";
             DataTable dt = await db.ExecuteSqlQuery(query);
-            string JSONString = JsonConvert.SerializeObject(dt);
+            DataTable dtfinal = new DataTable();
+            if (dt != null && dt.Rows.Count > 0 )
+            {
+                string count = dt.Rows[0]["count"].ToString();
+                DataRow [] rows = dt.Select("count=" + count);
+                dtfinal = rows.CopyToDataTable();
+               
+            }
+            string JSONString = JsonConvert.SerializeObject(dtfinal);
             return Ok(JSONString);
         }
 
@@ -61,7 +69,7 @@ namespace StarWarAPI.Controllers
         public async Task<IHttpActionResult> GetVehiclePilots()
         {
             //Query for Planets and its counts
-            string query = "select top 10 p1.name, count(*) AS [count],STUFF((SELECT DISTINCT top 2 ', ' + p3.name + '-' + s3.name " +
+            string query = "select p1.name, count(*) AS [count],STUFF((SELECT DISTINCT top 2 ', ' + p3.name + '-' + s3.name " +
                            "from people p3 inner join films_characters f3 on p3.id=f3.people_id " +
                            "inner join films f13 on f13.id=f3.film_id inner join films_species f23 on f13.id=f23.film_id " +
                            "inner join species s3 on s3.id=f23.species_id inner join films_planets fp3 on fp3.film_id=f13.id " +
@@ -73,7 +81,15 @@ namespace StarWarAPI.Controllers
                            "inner join planets p1 on p1.id=fp.planet_id inner join vehicles_pilots vp on vp.people_id=p.id " +
                            "inner join vehicles v on v.id=vp.vehicle_id group by p1.name order by [count] desc; ";
             DataTable dt_planets_data = await db.ExecuteSqlQuery(query);
-            string JSONString = JsonConvert.SerializeObject(dt_planets_data);
+            DataTable dtfinal = new DataTable();
+            if (dt_planets_data != null && dt_planets_data.Rows.Count > 0)
+            {
+                string count = dt_planets_data.Rows[0]["count"].ToString();
+                DataRow[] rows = dt_planets_data.Select("count=" + count);
+                dtfinal = rows.CopyToDataTable();
+
+            }
+            string JSONString = JsonConvert.SerializeObject(dtfinal);
             return Ok(JSONString);
         }
 
