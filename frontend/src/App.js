@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import logo from './Star_Wars_Logo.svg.png';
 import Simple_Question from './simplequestion'
-import List_Question from './listquestion'
+import List_Question_3 from './question3'
+import List_Question_4 from './question4'
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class App extends Component {
         <h3>{this.state.Q1_Ans}</h3>
         <h2>{this.state.Q2_Question}</h2>
         <h3>{this.state.Q2_Ans}</h3>
-        <List_Question />
+        <List_Question_3 />
+        <List_Question_4 />
         </div>
       </div>
     );

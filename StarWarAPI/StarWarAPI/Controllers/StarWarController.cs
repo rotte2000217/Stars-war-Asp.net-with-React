@@ -71,7 +71,7 @@ namespace StarWarAPI.Controllers
                            "inner join films f1 on f1.id=f.film_id inner join films_species f2 on f1.id=f2.film_id " +
                            "inner join species s on s.id=f2.species_id inner join films_planets fp on fp.film_id=f1.id " +
                            "inner join planets p1 on p1.id=fp.planet_id inner join vehicles_pilots vp on vp.people_id=p.id " +
-                           "inner join vehicles v on v.id=vp.vehicle_id group by p1.name order by p1.name ";
+                           "inner join vehicles v on v.id=vp.vehicle_id group by p1.name order by [count] desc; ";
             DataTable dt_planets_data = await db.ExecuteSqlQuery(query);
             string JSONString = JsonConvert.SerializeObject(dt_planets_data);
             return Ok(JSONString);
