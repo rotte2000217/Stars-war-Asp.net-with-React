@@ -3,7 +3,7 @@ export default class List_Question_3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        Question: "What species appeared in the most  number of Star Wars films? ",
+        Question: "What species appeared in the most  number of Star Wars films?",
         data: []
       };
     }

@@ -7,9 +7,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Q1_Question: "Which of all Star Wars movies has the longest opening crawl ?",
+      Q1_Question: "Which of all Star Wars movies has the longest opening crawl?",
       Q1_Ans: "",
-      Q2_Question: "What character (person) appeared in most of the Star Wars films? ",
+      Q2_Question: "What character (person) appeared in most of the Star Wars films?",
       Q2_Ans: ""
     };
   }
