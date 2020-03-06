@@ -36,14 +36,18 @@ exports[`App snapshot renders App 1`] = `
     <div
       className="App-Theme"
     >
-      <h2>
+      <h2
+        id="QuestionText"
+      >
         What species appeared in the most  number of Star Wars films?
       </h2>
     </div>
     <div
       className="App-Theme"
     >
-      <h2>
+      <h2
+        id="QuestionText"
+      >
         What planet in Star Wars universe provided largest number of vehicle pilots?
       </h2>
     </div>
@@ -55,7 +59,9 @@ exports[`Question3 snapshot renders Question3 1`] = `
 <div
   className="App-Theme"
 >
-  <h2>
+  <h2
+    id="QuestionText"
+  >
     What species appeared in the most  number of Star Wars films?
   </h2>
 </div>
@@ -65,7 +71,9 @@ exports[`Question4 snapshot renders Question4 1`] = `
 <div
   className="App-Theme"
 >
-  <h2>
+  <h2
+    id="QuestionText"
+  >
     What planet in Star Wars universe provided largest number of vehicle pilots?
   </h2>
 </div>
