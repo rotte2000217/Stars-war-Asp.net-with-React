@@ -79,14 +79,8 @@ describe('<h3 />', () => {
 
  it('able to find an html element by class App', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find('.App-title').html())
-   .toContain('Welcome to the prototype');
- });
-
- it('able to find an html element by class App 1', () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper.find('.App').html())
-   .toContain('App-title');
+  expect(wrapper.find('.App-logo').html())
+   .toContain('Star_Wars_Logo');
  });
 
  it('able to find an html element by class Q3', () => {

@@ -12,14 +12,35 @@ exports[`App snapshot renders App 1`] = `
       className="App-logo"
       src="Star_Wars_Logo.svg.png"
     />
-    <h1
-      className="App-title"
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained WithStyles(ForwardRef(Button))-root-1 MuiButton-containedSizeLarge MuiButton-sizeLarge"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
     >
-      Welcome to the prototype interactive Test
-    </h1>
+      <span
+        className="MuiButton-label"
+      >
+        * Do. Or do not. There is no try. *
+      </span>
+    </button>
   </header>
   <div
-    className="App-Theme"
+    className="hidden"
+    id="QuestionsContainer"
   >
     <h2>
       Which of all Star Wars movies has the longest opening crawl?
