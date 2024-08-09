@@ -3,7 +3,7 @@ This is a project using React js with asp.net API and sql server
 
 For start of this project kindly follow the steps below
 
-1. Get the master branch of the code from github link : https://github.com/sajidalikhalid84/StarWarProject
+1. Get the master branch of the code from github link : https://github.com/rotte2000217/StarWarProject
 2. First open the API code on visual studio. Build the code and run the application.
 3. Open the Frond end react code in visual studio code or any tool which supports react js.
 4. If API running on http://localhost:59714 following url then its good other wise change package.json file proxy settings to the running API port.
